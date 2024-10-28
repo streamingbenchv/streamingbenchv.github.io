@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let filteredVideos = [];
     const videoList = [
         {
-            youtubeUrl: 'https://www.youtube.com/watch?v=Ks1tN2YEvPY&t=78s',
+            src: 'videos/video1.mp4',
             thumbnail: 'thumbnails/video1.jpg',
             title: 'Video 1',
             attributes: ['Object Perception','Causal Reasoning','Text-Rich Understanding','Attribute Perception'],
