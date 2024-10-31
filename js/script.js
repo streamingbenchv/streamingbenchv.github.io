@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         'LLaVA-OneVision': "C",
                         'MiniCPM-V 2.6': "C",
                         "InternVL-V2-8": "C. He scored a goal.",
-                        "Kangaroo": "C. He scored a goal",
+                        "Kangaroo": "C",
                         "LLaVA-OneVision": "C",
                         "LongVA": "C",
                         "VideoCCam": "C. He scored a goal.",
@@ -343,7 +343,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     taskType: 'Proactive Output',
                     correctOption: '62',
                     groundTruthOutput: '20',
-                    modelReplies: {}
+                    modelReplies: {
+                        'InternVL-V2-8': '[00:00:25]: 20',
+                    }
                 },
                 {
                     time: 80, 
@@ -351,7 +353,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     taskType: 'Proactive Output',
                     correctOption: '124',
                     groundTruthOutput: '20',
-                    modelReplies: {}
+                    modelReplies: {
+                        'InternVL-V2-8': '[00:01:20]: 20'
+                    }
                 },
                 {
                     time: 176, 
@@ -359,7 +363,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     taskType: 'Proactive Output',
                     correctOption: '182',
                     ground_truth_output: "7",
-                    modelReplies: {}
+                    modelReplies: {
+                        'InternVL-V2-8': '[00:02:56]: 7'
+                    }
                 },
                 {
                     time: 407, 
@@ -367,7 +373,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     taskType: 'Proactive Output',
                     correctOption: '430',
                     ground_truth_output: "5",
-                    modelReplies: {}
+                    modelReplies: {
+                        'InternVL-V2-8': '[00:06:47]: 5'
+                    }
                 },
                 {
                     time: 645, 
@@ -375,7 +383,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     taskType: 'Proactive Output',
                     correctOption: '652',
                     ground_truth_output: "5",
-                    modelReplies: {}
+                    modelReplies: {
+                        'InternVL-V2-8': '[00:10:45]: 5'
+                    }
                 }
             ]
         },
@@ -1167,7 +1177,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 replyDiv.classList.add('model-reply');
  
                 // Determine if the model's reply is correct
-                const isCorrect = question.modelReplies[modelName] === question.correctOption;
+                const isCorrect = question.modelReplies[modelName][0] === question.correctOption;
                 if (isCorrect) {
                     replyDiv.classList.add('correct');
                 } else {
